@@ -8,25 +8,25 @@ const CONFIG = {
     email: "dideodnjs9860@gmail.com",
     linkedin: "",
     github: "YDaewon",
-    instagram: "",
+    instagram: "99_10_31",
   },
   projects: [
     {
       name: `zompia`,
-      href: "https://github.com/zompia",
+      href: "https://github.com/YDaewon/zompia",
     },
     {
       name: `fin_catch`,
-      href: "https://github.com/fin_catch",
+      href: "https://github.com/YDaewon/fin_catch",
     },
     {
       name: `storycut`,
-      href: "https://github.com/storycut",
+      href: "https://github.com/YDaewon/storycut",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "daebok-log",
+    title: "Daebok-log",
     description: "welcome to daebok-log!",
     scheme: "system", // 'light' | 'dark' | 'system'
   },
