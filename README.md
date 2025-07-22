@@ -15,7 +15,7 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 
 **📄 Use as a page as resume**
 
-- Useful for generating full page sites using Notion.
+- Useful for generating full page sites using Notion. 
 - Can be used for Resume, Portfolios etc.
 
 **👀 SEO friendly**
