@@ -43,6 +43,9 @@ const CONFIG = {
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
   },
+  notion_token: {
+    token: process.env.NOTION_TOKEN,
+  },
 
   // plugin configuration (optional)
   googleAnalytics: {
