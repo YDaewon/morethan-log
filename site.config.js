@@ -43,7 +43,7 @@ const CONFIG = {
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
   },
-  notion_token: {
+  notionToken: {
     token: process.env.NOTION_TOKEN,
   },
 
