@@ -14,8 +14,9 @@ import { TPosts } from "src/types"
 export const getPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
-
+  console.log("START_FETCHING_NOTION_DATA");
   const response = await api.getPage(id)
+  console.log("END_FETCHING_NOTION_DATA");
   id = idToUuid(id)
   const collection = Object.values(response.collection)[0]?.value
   const block = response.block
