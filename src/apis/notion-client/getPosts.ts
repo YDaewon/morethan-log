@@ -13,7 +13,9 @@ import { TPosts } from "src/types"
 // TODO: react query를 사용해서 처음 불러온 뒤로는 해당데이터만 사용하도록 수정
 export const getPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
-  const api = new NotionAPI()
+  const api = new NotionAPI({
+   authToken:  CONFIG.notionToken.token as string
+  })
   const response = await api.getPage(id)
   
   // 1. 응답 객체의 최상위 키값들 확인 (데이터가 구조적으로 들어왔는지 확인)
