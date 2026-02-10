@@ -19,6 +19,7 @@ const filter: FilterPostsOptions = {
 
 export const getStaticPaths = async () => {
   const posts = await getPosts()
+  console.log(posts)
   const filteredPost = filterPosts(posts, filter)
 
   return {
