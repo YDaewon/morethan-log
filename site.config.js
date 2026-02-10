@@ -1,3 +1,5 @@
+console.log("DEBUG_ID_CHECK:", process.env.NOTION_PAGE_ID);
+
 const CONFIG = {
   // profile setting (required) 
   profile: {
