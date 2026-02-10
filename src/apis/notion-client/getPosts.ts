@@ -15,15 +15,25 @@ export const getPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
   const response = await api.getPage(id)
-  console.log("GET_PAGE_DATA: " + response);
+  
+  // 1. 응답 객체의 최상위 키값들 확인 (데이터가 구조적으로 들어왔는지 확인)
+  console.log("RESPONSE_KEYS:", Object.keys(response))
+  
+  // 2. block 객체 안에 어떤 ID들이 들어있는지 확인 (우리가 가진 ID와 비교용)
+  if (response.block) {
+    console.log("BLOCK_KEYS_SAMPLE:", Object.keys(response.block).slice(0, 5))
+  }
+  
   id = idToUuid(id)
   const collection = Object.values(response.collection)[0]?.value
   const block = response.block
   const schema = collection?.schema
 
+  console.log("TARGET_ID:", id)
+  console.log("IS_TARGET_ID_IN_BLOCK:", !!block[id])
+  
   const rawMetadata = block[id].value
-
-  console.log("CHECK_1_METADATA_TYPE:", rawMetadata?.type)
+  console.log("RAW_METADATA_VALUE:", JSON.stringify(rawMetadata, null, 2))
 
   // Check Type
   if (
