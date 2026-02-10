@@ -24,11 +24,14 @@ export const getPosts = async () => {
 
   const rawMetadata = block[id].value
 
+  console.log("CHECK_1_METADATA_TYPE:", rawMetadata?.type)
+
   // Check Type
   if (
     rawMetadata?.type !== "collection_view_page" &&
     rawMetadata?.type !== "collection_view"
   ) {
+    console.log("FETCHED_DATA_COUNT:", data.length);
     return []
   } else {
     // Construct Data
@@ -46,7 +49,7 @@ export const getPosts = async () => {
 
       data.push(properties)
     }
-
+    console.log("CHECK_2_DATA_COUNT:", data.length)
     // Sort by date
     data.sort((a: any, b: any) => {
       const dateA: any = new Date(a?.date?.start_date || a.createdTime)
