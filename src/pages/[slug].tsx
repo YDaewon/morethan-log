@@ -35,6 +35,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   await queryClient.prefetchQuery(queryKey.posts(), () => feedPosts)
 
   const detailPosts = filterPosts(posts, filter)
+
+  console.log("DEBUG_SLUG_VALUE:", slug) // 현재 어떤 페이지를 빌드 중인지 확인
+  console.log("DEBUG_DETAIL_POSTS_COUNT:", detailPosts.length) // 필터링된 글이 몇 개인가
+  console.log("DEBUG_DETAIL_POSTS_LIST:", JSON.stringify(detailPosts.map(p => ({ slug: p.slug, type: p.type, status: p.status })), null, 2))
+  
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
   const recordMap = await getRecordMap(postDetail?.id!)
 
